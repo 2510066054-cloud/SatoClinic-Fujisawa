@@ -20,7 +20,7 @@ h1,h2,h3,h4,h5,h6,b,strong,.site-header,.greeting-copy,.about-description p{font
 .mobile-nav{display:none}
 .hero{height:600px;position:relative;isolation:isolate}
 .hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 43%;z-index:-2}
-.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(194,233,234,.15),transparent 56%);z-index:-1;pointer-events:none}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(250,252,248,.8),rgba(250,252,248,.35) 43%,transparent 72%);z-index:-1;pointer-events:none}
 .hero-content{height:100%;position:relative}
 .hero-message{position:absolute;top:65px;left:18px}
 .hero-message h1{font-weight:800;font-family:var(--font-rounded);font-size:44px;line-height:1.35;letter-spacing:.005em;margin-bottom:17px}
@@ -462,6 +462,7 @@ table.schedule-table{
 :is(.news-hero-inner,.page-hero-inner){position:absolute;inset:0;display:flex;align-items:center;padding-left:136px}
 :is(.news-hero,.page-hero) h1{margin:0;font-size:44px;font-weight:800;line-height:1.35}
 :is(.news-page-section,.page-section){margin-top:20px;margin-bottom:70px}
+body#top .news{margin-top:20px}
 :is(.news-page-section,.page-section)>.section-title{margin-bottom:40px}
 .news-articles{width:min(100%,868px);margin-inline:auto;scroll-margin-top:110px}
 .news-page-intro{font-size:16px;line-height:1.7;margin:0 0 20px}
@@ -490,6 +491,7 @@ table.schedule-table{
  :is(.news-hero-inner,.page-hero-inner){align-items:flex-start;padding:28px 0 0}
  :is(.news-hero,.page-hero) h1{font-size:23px;line-height:1.3}
  :is(.news-page-section,.page-section){margin-top:26px;margin-bottom:44px}
+ body#top .news{margin-top:26px}
  :is(.news-page-section,.page-section)>.section-title{margin-bottom:22px}
  .news-articles{scroll-margin-top:80px}
  .news-page-intro{font-size:13px;margin-bottom:6px}
@@ -565,3 +567,124 @@ table.schedule-table{
 .page-main--faq .page-content>.page-intro{line-height:1.45;margin-bottom:6px}
 .page-main--faq .page-content>.page-intro+p{line-height:1.5}
 .faq-question{min-width:0;font-size:calc(1em - 2px)}
+/* Contact / booking information page. Reservations and form submission are not active. */
+.contact-page-body{margin-bottom:70px}
+.contact-breadcrumb{margin:20px 0 36px;font-size:14px}
+.contact-breadcrumb ol{display:flex;flex-wrap:wrap;gap:12px;list-style:none;padding:0;margin:0}
+.contact-breadcrumb li+li::before{content:'›';margin-right:12px}
+.contact-breadcrumb a:hover{text-decoration:underline}
+.contact-booking-layout{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:28px;align-items:start}
+.contact-web-card,.contact-phone-card{background:var(--pale);border-radius:20px;padding:30px}
+.contact-card-title{display:flex;align-items:center;gap:12px;font-size:27px;line-height:1.5;margin:0 0 16px}
+.contact-card-title svg{width:36px;height:36px;flex:none;color:var(--green)}
+.contact-card-title small{font-size:20px}
+.contact-web-card p{margin-bottom:20px}
+.contact-booking-targets{background:rgba(255,255,255,.72);border-radius:12px;padding:22px;margin:24px 0}
+.contact-booking-targets h3{font-size:21px;color:var(--green);margin-bottom:12px}
+.contact-booking-targets ul{padding-left:1.3em;margin:0}
+.contact-booking-targets li+li{margin-top:6px}
+.contact-action{display:flex;align-items:center;justify-content:center;gap:20px;width:min(100%,440px);min-height:56px;margin-inline:auto;padding:12px 24px;border:0;border-radius:40px;background:var(--green-dark);color:#fff;font:700 23px/1.5 var(--font-rounded);text-align:center}
+.contact-action span{font-size:28px;font-weight:400}
+.contact-action:disabled{opacity:.78;cursor:not-allowed}
+.contact-web-card .contact-status{margin:14px 0 0;font-size:13px;line-height:1.65}
+.contact-phone-card{padding:26px}
+.contact-phone-card h2{font-size:20px;line-height:1.5;margin-bottom:16px}
+.contact-phone-number{display:flex;align-items:center;justify-content:center;gap:12px;color:var(--green-dark);font:800 34px/1.4 var(--font-rounded);white-space:nowrap;margin-bottom:14px}
+.contact-phone-number img{width:36px;height:36px;flex:none}
+.contact-phone-card p{font-size:14px;line-height:1.65;margin:0 0 6px}
+.contact-phone-card p:last-child{margin-bottom:0}
+.contact-hours{margin-top:22px}
+.contact-hours h3{font-size:21px;margin-bottom:12px}
+.contact-hours-legend{font-size:13px;margin:8px 0 0}
+.contact-faq-card{display:flex;align-items:center;justify-content:space-between;gap:30px;background:var(--pale);border-radius:16px;padding:26px 30px;margin-top:40px}
+.contact-faq-card h2{font-size:21px;line-height:1.5;margin-bottom:8px}
+.contact-faq-card p{font-size:15px;line-height:1.7;margin:0;max-width:620px}
+.contact-faq-card .pill-link{flex:none;min-width:230px}
+.contact-form-section{margin-top:40px}
+.contact-form-title{display:flex;align-items:center;gap:12px;font-size:27px;line-height:1.5;margin-bottom:14px}
+.contact-form-title svg{width:36px;height:36px;flex:none;color:var(--green)}
+.contact-form-section>p{font-size:16px;line-height:1.7;margin-bottom:14px}
+.contact-form-section .contact-form-notice{font-size:14px;margin-bottom:24px;color:#405a4b}
+.contact-fields{overflow:hidden;border:1px solid #c9cfcb;border-radius:8px}
+.contact-form-row{display:grid;grid-template-columns:232px minmax(0,1fr)}
+.contact-form-row+.contact-form-row{border-top:1px solid #dce5df}
+.contact-form-row label{display:flex;align-items:center;gap:10px;background:var(--pale);padding:18px 22px;font-weight:700;font-family:var(--font-rounded)}
+.contact-required{padding:1px 5px;border-radius:3px;background:#cf2828;color:#fff;font-size:11px;white-space:nowrap}
+.contact-optional{color:#50675a;font-size:12px;white-space:nowrap}
+.contact-field{min-width:0;padding:10px 14px;background:#fff}
+.contact-field input,.contact-field textarea{display:block;width:100%;min-width:0;border:1px solid #adb6b0;border-radius:4px;padding:10px 12px;background:#fff;color:var(--ink);font:inherit;line-height:1.5}
+.contact-field input{min-height:44px}
+.contact-field textarea{resize:vertical;min-height:140px}
+.contact-field input::placeholder,.contact-field textarea::placeholder{color:#737a75;opacity:1}
+.contact-field input:focus-visible,.contact-field textarea:focus-visible{outline:3px solid #177abc;outline-offset:2px}
+.contact-privacy{font-size:13px;line-height:1.7;margin:16px 0 24px}
+.contact-confirm{margin-top:24px}
+@media(min-width:701px) and (max-width:1180px){
+ .contact-booking-layout{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:20px}
+ .contact-web-card,.contact-phone-card{padding:22px}
+ .contact-card-title{font-size:23px;flex-wrap:wrap}
+ .contact-card-title small{font-size:18px}
+ .contact-phone-number{font-size:27px;gap:8px}
+ .contact-phone-number img{width:28px;height:28px}
+ .contact-hours .schedule-table{font-size:13px}
+ .contact-hours .schedule-table th:first-child{width:94px}
+ .contact-hours .schedule-table tbody th{font-size:12px}
+ .contact-hours .schedule-table tbody td{font-size:16px}
+}
+@media(max-width:700px){
+ .contact-page-body{margin-bottom:44px}
+ .contact-breadcrumb{font-size:12px;margin:20px 0 24px}
+ .contact-booking-layout{grid-template-columns:minmax(0,1fr);gap:26px}
+ .contact-web-card,.contact-phone-card{padding:22px 18px;border-radius:16px}
+ .contact-card-title{font-size:21px;gap:8px}
+ .contact-card-title svg{width:28px;height:28px}
+ .contact-card-title small{font-size:15px}
+ .contact-web-card p,.contact-booking-targets ul{font-size:14px}
+ .contact-booking-targets{padding:18px 14px;margin-block:20px}
+ .contact-booking-targets h3,.contact-phone-card h2,.contact-hours h3{font-size:18px}
+ .contact-action{min-height:48px;font-size:18px;padding:10px 16px;gap:16px}
+ .contact-phone-number{font-size:30px;gap:10px}
+ .contact-phone-number img{width:30px;height:30px}
+ .contact-faq-card{flex-direction:column;align-items:stretch;gap:18px;padding:22px 18px;margin-top:30px}
+ .contact-faq-card h2{font-size:18px}
+ .contact-faq-card p{font-size:14px}
+ .contact-faq-card .pill-link{align-self:center;min-height:40px;font-size:13px}
+ .contact-form-section{margin-top:32px}
+ .contact-form-title{font-size:20px;align-items:flex-start;gap:8px}
+ .contact-form-title svg{width:28px;height:28px}
+ .contact-form-section>p{font-size:14px}
+ .contact-form-section .contact-form-notice{font-size:13px}
+ .contact-form-row{grid-template-columns:minmax(0,1fr)}
+ .contact-form-row label{padding:12px 14px;font-size:14px}
+ .contact-field{padding:12px}
+ .contact-field input,.contact-field textarea{font-size:16px}
+ .contact-privacy{font-size:12px}
+}
+/* Hero cycle: (2500ms hold + 800ms ease-out dissolve) x 4 = 13200ms.
+   Keep the first image opaque below every slide. Outgoing layers remain
+   opaque until covered, so neither the page background nor a third image flashes. */
+.hero-slide{pointer-events:none}
+.hero-slide--patient{opacity:1}
+.hero-slide--hospital,.hero-slide--medical-1,.hero-slide--medical-7{opacity:0;animation-duration:13200ms;animation-timing-function:ease-out;animation-iteration-count:infinite;animation-fill-mode:both}
+.hero-slide--hospital{object-position:center;animation-name:hero-hospital-dissolve}
+.hero-slide--medical-1{object-position:75% 20%;animation-name:hero-medical-1-dissolve}
+.hero-slide--medical-7{object-position:80% 25%;animation-name:hero-medical-7-dissolve}
+@keyframes hero-hospital-dissolve{
+ 0%,18.939394%{opacity:0}
+ 25%,50%{opacity:1}
+ 50.001%,100%{opacity:0}
+}
+@keyframes hero-medical-1-dissolve{
+ 0%,43.939394%{opacity:0}
+ 50%,75%{opacity:1}
+ 75.001%,100%{opacity:0}
+}
+@keyframes hero-medical-7-dissolve{
+ 0%,68.939394%{opacity:0}
+ 75%,93.939394%{opacity:1}
+ 100%{opacity:0}
+}
+@media(prefers-reduced-motion:reduce){
+ .hero-slide{animation:none}
+ .hero-slide--hospital,.hero-slide--medical-1,.hero-slide--medical-7{opacity:0;visibility:hidden}
+}
