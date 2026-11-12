@@ -559,7 +559,7 @@ body#top .news{margin-top:20px}
  .page-main .faq-item .faq-answer{font-size:14px}
  .page-main .page-content>.faq-group{margin-bottom:32px}
 }
-.page-main--about .page-content .page-intro{font-family:var(--font-rounded);font-size:clamp(16px,1.5vw,20px);font-weight:800;line-height:1.5}
+.page-main--about .page-content .page-intro,.page-main--services .page-content .page-intro{font-family:var(--font-rounded);font-size:clamp(16px,1.5vw,20px);font-weight:800;line-height:1.5}
 .page-main .faq-item>summary{display:grid;grid-template-columns:auto minmax(0,1fr) 20px;align-items:baseline;gap:10px;margin-bottom:0;list-style:none;cursor:pointer}
 .faq-item>summary::-webkit-details-marker{display:none}
 .faq-item>summary::before{margin-right:0}
@@ -570,11 +570,7 @@ body#top .news{margin-top:20px}
 .page-main--faq .page-content>.page-intro+p{line-height:1.5}
 .faq-question{min-width:0;font-size:calc(1em - 2px)}
 /* Contact / booking information page. Reservations and form submission are not active. */
-.contact-page-body{margin-bottom:70px}
-.contact-breadcrumb{margin:20px 0 36px;font-size:14px}
-.contact-breadcrumb ol{display:flex;flex-wrap:wrap;gap:12px;list-style:none;padding:0;margin:0}
-.contact-breadcrumb li+li::before{content:'›';margin-right:12px}
-.contact-breadcrumb a:hover{text-decoration:underline}
+.contact-page-body{margin-top:32px;margin-bottom:70px}
 .contact-booking-layout{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:28px;align-items:start}
 .contact-web-card,.contact-phone-card{background:var(--pale);border-radius:20px;padding:30px}
 .contact-card-title{display:flex;align-items:center;gap:12px;font-size:27px;line-height:1.5;margin:0 0 16px}
@@ -602,6 +598,7 @@ body#top .news{margin-top:20px}
 .contact-faq-card h2{font-size:21px;line-height:1.5;margin-bottom:8px}
 .contact-faq-card p{font-size:15px;line-height:1.7;margin:0;max-width:620px}
 .contact-faq-card .pill-link{flex:none;min-width:230px}
+.contact-form-title+.contact-faq-card{margin:0 0 24px}
 .contact-form-section{margin-top:40px}
 .contact-form-title{display:flex;align-items:center;gap:12px;font-size:27px;line-height:1.5;margin-bottom:14px}
 .contact-form-title svg{width:36px;height:36px;flex:none;color:var(--green)}
@@ -634,8 +631,7 @@ body#top .news{margin-top:20px}
  .contact-hours .schedule-table tbody td{font-size:16px}
 }
 @media(max-width:700px){
- .contact-page-body{margin-bottom:44px}
- .contact-breadcrumb{font-size:12px;margin:20px 0 24px}
+ .contact-page-body{margin-top:26px;margin-bottom:44px}
  .contact-booking-layout{grid-template-columns:minmax(0,1fr);gap:26px}
  .contact-web-card,.contact-phone-card{padding:22px 18px;border-radius:16px}
  .contact-card-title{font-size:21px;gap:8px}
@@ -717,3 +713,4 @@ body#top .news{margin-top:20px}
 @media(min-width:701px) and (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
  .hero-cta .cta:hover{min-height:74px}
 }
+.site-header a[href="./contact.html"]{display:inline-flex;align-items:center;justify-content:center;padding:8px 18px;border-bottom:0;border-radius:999px;background:var(--blue);color:#000}
