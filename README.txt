@@ -12,7 +12,7 @@ about.html             当院について・スタッフ紹介
 hours-access.html      診療時間・アクセス
 faq.html               よくあるご質問
 css/style.css          PC・スマートフォン共通スタイル
-assets/                支給画像（必要箇所を切り出した画像を含む）
+img/                   支給画像（元のファイル名・フォルダ構成のまま使用）
 
 ■ 実装内容
 ・HTML / CSSのみ。JavaScript、フレームワーク不使用。
