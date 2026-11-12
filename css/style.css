@@ -457,7 +457,7 @@ table.schedule-table{
  .schedule-table th:last-child,.schedule-table td:last-child{width:36px}
 }
 /* News page: layout based on the supplied finished design. */
-:is(.news-hero,.page-hero){position:relative;height:600px}
+:is(.news-hero,.page-hero){position:relative;height:450px}
 :is(.news-hero-photo,.page-hero-photo){width:100%;height:100%;object-fit:cover;object-position:center}
 :is(.news-hero-inner,.page-hero-inner){position:absolute;inset:0;display:flex;align-items:center;padding-left:136px}
 :is(.news-hero,.page-hero) h1{margin:0;font-size:44px;font-weight:800;line-height:1.35}
@@ -479,7 +479,7 @@ body#top .news{margin-top:20px}
 .news-pagination-gap{width:30px;text-align:center;font-size:18px;font-weight:700}
 .news-pagination .news-pagination-next{background:transparent;font-size:30px;font-weight:400}
 @media(min-width:701px) and (max-width:1180px){
- :is(.news-hero,.page-hero){height:560px}
+ :is(.news-hero,.page-hero){height:420px}
  :is(.news-hero-inner,.page-hero-inner){padding-left:60px}
  :is(.news-hero,.page-hero) h1{font-size:36px}
  .news-article{grid-template-columns:120px minmax(0,1fr);gap:24px}
@@ -487,7 +487,7 @@ body#top .news{margin-top:20px}
  .news-article p{font-size:calc(18px - 2pt)}
 }
 @media(max-width:700px){
- :is(.news-hero,.page-hero){height:338px}
+ :is(.news-hero,.page-hero){height:254px}
  :is(.news-hero-photo,.page-hero-photo){object-position:65% center}
  :is(.news-hero-inner,.page-hero-inner){align-items:flex-start;padding:28px 0 0}
  :is(.news-hero,.page-hero) h1{font-size:23px;line-height:1.3}
@@ -714,3 +714,15 @@ body#top .news{margin-top:20px}
  .hero-cta .cta:hover{min-height:74px}
 }
 .site-header a[href="./contact.html"]{display:inline-flex;align-items:center;justify-content:center;padding:8px 18px;border-bottom:0;border-radius:999px;background:var(--blue);color:#000}
+/* Shorter inner-page heroes: keep faces visible and away from page titles. */
+.news-hero,.page-main--services .page-hero,.page-main--faq .page-hero,.page-main--contact .page-hero{background:#fff}
+:is(.news-hero-photo,.page-main--services .page-hero-photo,.page-main--faq .page-hero-photo,.page-main--contact .page-hero-photo){width:min(100%,787.5px);margin-left:auto;object-fit:contain;object-position:right center;mask-image:linear-gradient(90deg,transparent,#000 12%)}
+@media(min-width:701px) and (max-width:1180px){
+ :is(.news-hero-photo,.page-main--services .page-hero-photo,.page-main--faq .page-hero-photo,.page-main--contact .page-hero-photo){width:min(100%,735px)}
+}
+@media(max-width:1024px){
+ .page-main--contact .page-hero h1{max-width:6em}
+}
+@media(max-width:700px){
+ :is(.news-hero-photo,.page-main--services .page-hero-photo,.page-main--faq .page-hero-photo,.page-main--contact .page-hero-photo){width:100%}
+}
