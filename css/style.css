@@ -469,7 +469,8 @@ body#top .news{margin-top:20px}
 .news-article{display:grid;grid-template-columns:140px minmax(0,1fr);gap:28px;align-items:center;padding:24px 0;border-bottom:1px solid var(--line)}
 .news-article time,.news-article .news-date{font-family:var(--font-rounded);font-size:17px;font-weight:700;line-height:1.5;color:var(--ink);white-space:nowrap}
 .news-article-copy{min-width:0}
-.news-article h3{margin:0 0 10px;font-size:calc(21px + 2pt);font-weight:800;line-height:1.5;overflow-wrap:anywhere}
+.news-article h3{margin:0 0 10px;overflow-wrap:anywhere}
+.news-article h3,.news-list a>span:nth-child(2){font-family:var(--font-rounded);font-size:calc(21px + 2pt);font-weight:800;line-height:1.5}
 .news-article p{margin:0;font-size:calc(20px - 2pt);line-height:1.55;overflow-wrap:anywhere}
 .news-pagination{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:54px;font-family:var(--font-rounded)}
 .news-pagination a,.news-pagination button{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;flex:none;border:0;border-radius:50%;padding:0;background:#d9d9d9;color:var(--ink);font:700 18px/1 var(--font-rounded);text-align:center}
@@ -482,7 +483,7 @@ body#top .news{margin-top:20px}
  :is(.news-hero-inner,.page-hero-inner){padding-left:60px}
  :is(.news-hero,.page-hero) h1{font-size:36px}
  .news-article{grid-template-columns:120px minmax(0,1fr);gap:24px}
- .news-article h3{font-size:calc(17px + 2pt)}
+ .news-article h3,.news-list a>span:nth-child(2){font-size:calc(17px + 2pt)}
  .news-article p{font-size:calc(18px - 2pt)}
 }
 @media(max-width:700px){
@@ -497,7 +498,8 @@ body#top .news{margin-top:20px}
  .news-page-intro{font-size:13px;margin-bottom:6px}
  .news-article{grid-template-columns:minmax(0,1fr);gap:10px;padding:24px 0}
  .news-article time,.news-article .news-date{font-size:13px}
- .news-article h3{font-size:calc(13px + 2pt);margin-bottom:10px}
+ .news-article h3{margin-bottom:10px}
+ .news-article h3,.news-list a>span:nth-child(2){font-size:calc(13px + 2pt)}
  .news-article p{font-size:14px;line-height:1.7}
  .news-pagination{gap:8px;margin-top:32px}
  .news-pagination a,.news-pagination button{width:36px;height:36px;font-size:14px}
@@ -687,4 +689,31 @@ body#top .news{margin-top:20px}
 @media(prefers-reduced-motion:reduce){
  .hero-slide{animation:none}
  .hero-slide--hospital,.hero-slide--medical-1,.hero-slide--medical-7{opacity:0;visibility:hidden}
+}
+/* Align the greeting photo and text with this section's heading rule. */
+.greeting .greeting-layout{width:100%;min-width:0;padding:0}
+.greeting .greeting-photo{width:100%;height:auto;aspect-ratio:1;margin:0}
+.greeting .greeting-copy{width:100%;min-width:0;font-size:17px;line-height:1.7}
+.greeting .greeting-copy p{margin-bottom:12px}
+@media(min-width:701px){
+ .greeting .greeting-layout{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;align-items:stretch}
+ .greeting .greeting-photo{height:100%;min-height:0}
+ .greeting .greeting-copy{display:flex;flex-direction:column;align-self:stretch}
+ .greeting .greeting-copy .desktop-sign{margin:auto 0 0;padding-top:16px;text-align:right}
+}
+@media(max-width:700px){
+ .greeting .greeting-layout{gap:0;align-items:stretch}
+ .greeting .greeting-copy{font-size:15px;line-height:1.7}
+}
+/* TOP news titles: midway between the original and article-heading sizes. */
+.news-list a>span:nth-child(2){font-size:20px}
+@media(min-width:701px) and (max-width:1180px){
+ .news-list a>span:nth-child(2){font-size:18px}
+}
+@media(max-width:700px){
+ .news-list a>span:nth-child(2){font-size:13px}
+}
+.hero-cta .cta{transition:min-height .22s ease-out,filter .2s}
+@media(min-width:701px) and (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+ .hero-cta .cta:hover{min-height:74px}
 }
