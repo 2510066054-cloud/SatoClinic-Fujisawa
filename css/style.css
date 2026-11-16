@@ -1102,3 +1102,7 @@ html:not([data-reader-size="standard"])[data-reader-size] .faq-item>summary::aft
 @media(max-width:700px){
  :is(#top .hero-cta,.mobile-contact-bar) .cta-phone{grid-template-columns:18px max-content;justify-content:center;column-gap:6px}
 }
+/* Keep short staff-detail paragraphs from spreading Japanese character spacing. */
+@media(max-width:700px){
+ .page-main--about .staff-detail p+p{text-align:left;text-justify:auto;letter-spacing:normal;text-wrap:wrap}
+}
