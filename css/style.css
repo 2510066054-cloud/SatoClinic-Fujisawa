@@ -1106,3 +1106,29 @@ html:not([data-reader-size="standard"])[data-reader-size] .faq-item>summary::aft
 @media(max-width:700px){
  .page-main--about .staff-detail p+p{text-align:left;text-justify:auto;letter-spacing:normal;text-wrap:wrap}
 }
+/* About: one native accordion for all seven clinic policies. */
+.policy-accordion{margin-top:24px;border:1px solid #c6dfd2;border-radius:12px;overflow:hidden;background:#fff}
+.policy-accordion>summary{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:56px;padding:14px 20px;list-style:none;cursor:pointer;background:var(--pale);color:#1f302b;font-size:18px;font-weight:700;line-height:1.6}
+.policy-accordion>summary::-webkit-details-marker{display:none}
+.policy-accordion>summary::after{content:"";flex:none;width:9px;height:9px;margin-right:4px;border-right:2px solid #087c42;border-bottom:2px solid #087c42;transform:rotate(45deg)}
+.policy-accordion>summary:hover{background:#e0f1e7}
+.policy-accordion>summary:focus-visible{outline:3px solid #087c42;outline-offset:-3px}
+.policy-accordion[open]>summary{border-bottom:1px solid #c6dfd2}
+.policy-accordion[open]>summary::after{transform:rotate(225deg)}
+.policy-accordion .policy-label-open,.policy-accordion[open] .policy-label-closed{display:none}
+.policy-accordion[open] .policy-label-open{display:inline}
+.policy-accordion-content{padding:0 18px 18px}
+.policy-accordion .policy-table{margin-top:18px}
+@media(max-width:700px){
+ .policy-accordion{margin-top:20px}
+ .policy-accordion>summary{font-size:16px;padding:14px 16px}
+ .policy-accordion-content{padding:0 16px}
+ .policy-accordion .policy-table{display:block;position:relative;margin:0;border:0;border-radius:0;font-size:14px}
+ .policy-accordion .policy-table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+ .policy-accordion .policy-table tbody{display:block}
+ .policy-accordion .policy-table tbody tr{display:grid;grid-template-columns:minmax(0,1fr);gap:8px;padding:20px 0;border-bottom:1px solid #d8e7de}
+ .policy-accordion .policy-table tbody tr:last-child{border-bottom:0}
+ .policy-accordion .policy-table tbody :is(th,td){display:block;width:auto;padding:0;border:0;background:transparent;text-align:left;text-justify:auto;letter-spacing:normal;text-wrap:wrap;line-height:1.8;overflow-wrap:break-word}
+ .policy-accordion .policy-table tbody th{font-size:16px}
+ .policy-accordion .policy-table tbody td:first-child{width:32px;min-height:28px;display:grid;place-items:center;border-radius:6px;background:var(--pale);color:#087c42;font-weight:700;line-height:1.5}
+}
