@@ -133,27 +133,30 @@
     const up = controls.querySelector('[data-scroll-direction="top"]');
     const down = controls.querySelector('[data-scroll-direction="bottom"]');
     const menu = document.querySelector('.mobile-nav');
+    const bar = document.querySelector('.hero-cta');
+    const protectedElements = [...document.querySelectorAll('footer,.contact-action,.reservation-actions,.reservation-edit-links,.reservation-confirm')];
     const media = matchMedia('(max-width: 767px)');
     const reduced = matchMedia('(prefers-reduced-motion: reduce)');
     let scheduled = false;
+    let activeScroll = null;
+    let lastBottom = null;
+    const endPosition = () => Math.max(0, document.documentElement.scrollHeight - innerHeight);
     const overlaps = (left, right) => left.left < right.right && left.right > right.left && left.top < right.bottom && left.bottom > right.top;
     function update() {
       scheduled = false;
-      controls.hidden = !media.matches || !!menu?.open;
-      if (controls.hidden) return;
-      const bottom = Math.max(0, document.documentElement.scrollHeight - innerHeight);
-      up.disabled = scrollY <= 4;
-      down.disabled = bottom - scrollY <= 4;
-      controls.style.removeProperty('--scroll-buttons-bottom');
-      const bar = document.querySelector('.hero-cta');
+      const hidden = !media.matches || !!menu?.open;
+      if (controls.hidden !== hidden) controls.hidden = hidden;
+      if (hidden) return;
+      const atTop = scrollY <= 4;
+      const atBottom = endPosition() - scrollY <= 4;
+      // Batch geometry reads before writes. Resetting bottom here used to force
+      // an extra layout on every scroll frame, especially costly on phones.
       const barRect = bar?.getBoundingClientRect();
       const barVisible = bar && getComputedStyle(bar).position === 'fixed' && barRect.height > 0;
       const safeArea = parseFloat(getComputedStyle(controls).getPropertyValue('--scroll-safe-area')) || 0;
       let edge = barVisible ? barRect.top - 12 : innerHeight - 16 - safeArea;
       const box = controls.getBoundingClientRect();
-      // Move above visible footer links and form actions instead of covering them.
-      const protectedElements = document.querySelectorAll('footer,.contact-action,.reservation-actions,.reservation-edit-links,.reservation-confirm');
-      const rectangles = [...protectedElements].map(element => element.getBoundingClientRect()).filter(rect => rect.height > 0 && rect.bottom > 0 && rect.top < innerHeight);
+      const rectangles = protectedElements.map(element => element.getBoundingClientRect()).filter(rect => rect.height > 0 && rect.bottom > 0 && rect.top < innerHeight);
       for (let pass = 0; pass < rectangles.length + 1; pass++) {
         const candidate = { left: box.left, right: box.right, top: edge - box.height, bottom: edge };
         const collision = rectangles.filter(rect => overlaps(candidate, rect));
@@ -161,25 +164,87 @@
         edge = Math.min(...collision.map(rect => rect.top)) - 12;
       }
       edge = Math.max(box.height + 12, edge);
-      controls.style.setProperty('--scroll-buttons-bottom', `${Math.max(16, innerHeight - edge)}px`);
+      const nextBottom = Math.max(16, innerHeight - edge);
+      if (up.disabled !== atTop) up.disabled = atTop;
+      if (down.disabled !== atBottom) down.disabled = atBottom;
+      if (lastBottom === null || Math.abs(nextBottom - lastBottom) > 0.5) {
+        controls.style.setProperty('--scroll-buttons-bottom', `${nextBottom}px`);
+        lastBottom = nextBottom;
+      }
     }
     const requestUpdate = () => {
       if (scheduled) return;
       scheduled = true;
       requestAnimationFrame(update);
     };
-    function move(toBottom) {
-      window.scrollTo({ top: toBottom ? document.documentElement.scrollHeight : 0, behavior: reduced.matches ? 'instant' : 'smooth' });
+    function restoreScrollBehavior(animation) {
+      if (animation.behavior) root.style.setProperty('scroll-behavior', animation.behavior, animation.priority);
+      else root.style.removeProperty('scroll-behavior');
+    }
+    function cancelScroll() {
+      if (!activeScroll) return;
+      cancelAnimationFrame(activeScroll.frame);
+      restoreScrollBehavior(activeScroll);
+      activeScroll = null;
       requestUpdate();
+    }
+    function move(toBottom) {
+      cancelScroll();
+      const from = scrollY;
+      const target = toBottom ? endPosition() : 0;
+      const distance = Math.abs(target - from);
+      const animation = {
+        toBottom, from, frame: 0, start: performance.now(),
+        duration: Math.min(1400, Math.max(650, Math.sqrt(distance) * 14)),
+        behavior: root.style.getPropertyValue('scroll-behavior'),
+        priority: root.style.getPropertyPriority('scroll-behavior')
+      };
+      // Avoid combining CSS/native smooth scrolling with our per-frame motion.
+      // 'auto' with this temporary override also works in older mobile browsers.
+      root.style.setProperty('scroll-behavior', 'auto', 'important');
+      if (reduced.matches || distance < 8) {
+        window.scrollTo({ top: target, behavior: 'auto' });
+        restoreScrollBehavior(animation);
+        requestUpdate();
+        return;
+      }
+      activeScroll = animation;
+      const tick = now => {
+        if (activeScroll !== animation) return;
+        const progress = Math.min(1, (now - animation.start) / animation.duration);
+        const eased = progress < 0.5 ? 4 * progress ** 3 : 1 - (-2 * progress + 2) ** 3 / 2;
+        // Re-evaluate the bottom to account for a phone's changing browser bars.
+        const destination = animation.toBottom ? endPosition() : 0;
+        window.scrollTo({ top: animation.from + (destination - animation.from) * eased, behavior: 'auto' });
+        requestUpdate();
+        if (progress < 1) animation.frame = requestAnimationFrame(tick);
+        else {
+          restoreScrollBehavior(animation);
+          activeScroll = null;
+        }
+      };
+      animation.frame = requestAnimationFrame(tick);
     }
     up.addEventListener('click', () => move(false));
     down.addEventListener('click', () => move(true));
+    // Yield immediately to intentional manual scrolling; never block gestures.
+    window.addEventListener('touchstart', cancelScroll, { passive: true });
+    window.addEventListener('wheel', cancelScroll, { passive: true });
+    window.addEventListener('pointerdown', cancelScroll, { passive: true });
+    window.addEventListener('keydown', event => {
+      if (['ArrowUp', 'ArrowDown', 'PageUp', 'PageDown', 'Home', 'End', ' '].includes(event.key)) cancelScroll();
+    });
+    window.addEventListener('pagehide', cancelScroll);
+    document.addEventListener('visibilitychange', () => { if (document.hidden) cancelScroll(); });
     window.addEventListener('scroll', requestUpdate, { passive: true });
     window.addEventListener('resize', requestUpdate, { passive: true });
     window.addEventListener('load', requestUpdate);
-    menu?.addEventListener('toggle', requestUpdate);
+    menu?.addEventListener('toggle', () => { if (menu.open) cancelScroll(); requestUpdate(); });
     document.addEventListener('site:layout', requestUpdate);
-    media.addEventListener('change', requestUpdate);
+    media.addEventListener('change', () => { if (!media.matches) cancelScroll(); requestUpdate(); });
+    reduced.addEventListener('change', () => {
+      if (reduced.matches && activeScroll) move(activeScroll.toBottom);
+    });
     if (window.ResizeObserver) new ResizeObserver(requestUpdate).observe(document.body);
     update();
   }
