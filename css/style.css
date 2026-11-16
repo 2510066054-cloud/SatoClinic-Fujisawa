@@ -36,7 +36,7 @@ h1,h2,h3,h4,h5,h6,b,strong,.site-header,.greeting-copy,.about-description p{font
 .schedule-mini tbody th{font-size:11px;font-weight:400;padding:5px 2px 5px 8px;text-align:left}
 .schedule-mini tbody td{font-size:16px;padding:3px 1px;font-weight:700;font-family:var(--font-rounded)}
 .schedule-mini tbody tr{border-bottom:1px dashed #cbd1ce}
-.schedule-mini .sunday,.hours-table .sunday{color:#f5aab1}
+.schedule-mini .sunday,.hours-table .sunday{color:#FFC0C3}
 .hero-hours .schedule-mini table{font-size:16px}
 .hero-hours .schedule-mini{border-radius:20px 20px 0 0;overflow:hidden}
 .hero-hours .schedule-mini th:first-child{width:116px;text-align:right;padding-left:0;padding-right:8px}
@@ -53,7 +53,7 @@ h1,h2,h3,h4,h5,h6,b,strong,.site-header,.greeting-copy,.about-description p{font
 .cta .chevron{font-size:30px;font-weight:400;margin-left:auto;line-height:1}
 .cta-phone{background:var(--green);border-radius:22px 22px 0 0}
 .cta-book{background:var(--blue);border-radius:22px 22px 0 0}
-.cta-access{background:var(--pale);color:var(--ink);border-radius:22px 22px 0 0;font-size:15px;line-height:1.35}
+.cta-access{background:var(--pale);color:var(--ink);border-radius:22px 22px 0 0;font-size:24px;line-height:1.35}
 .cta-access svg{width:28px;height:28px}
 .cta-access small{display:block;font-size:12px;font-weight:700;font-family:var(--font-rounded)}
 .mobile-opening-hours{display:none}
@@ -184,7 +184,7 @@ h1,h2,h3,h4,h5,h6,b,strong,.site-header,.greeting-copy,.about-description p{font
 @media(max-width:1180px) and (min-width:701px){
  .site-header{height:80px}.site-logo{width:145px}.desktop-nav{gap:15px;font-size:16.5px}
  .hero{height:530px}.hero-message h1{font-size:36px}.hero-hours{width:560px;top:190px}
- .cta{font-size:18px;gap:10px}.cta-access{font-size:13px}
+ .cta{font-size:18px;gap:10px}.cta-access{font-size:18px}
  .greeting-layout{grid-template-columns:42% 1fr;gap:30px;padding:0}.greeting-photo{height:530px}.greeting-copy{font-size:19px}
  .service-card{grid-template-columns:135px 1fr;min-height:140px}.service-icon{width:135px;height:135px}.service-copy h3{font-size:calc(17px + 2pt)}.service-copy p{font-size:calc(18px - 2pt)}
  .staff-grid{padding-inline:0;gap:20px}.staff-card{grid-template-columns:150px 1fr;min-height:150px;gap:15px}.staff-card>img,.staff-card>.source-photo{width:150px;height:150px}.staff-copy h3{font-size:calc(17px + 2pt)}.staff-copy p{font-size:calc(18px - 2pt)}
@@ -296,13 +296,13 @@ h1,h2,h3,h4,h5,h6,b,strong,.site-header,.greeting-copy,.about-description p{font
  .hours-table tbody td{font-size:15px}
  .hours-notes{order:3;font-size:11px;margin:14px 0 0;line-height:1.6}
  .hours-notes p{margin-bottom:0}
- .hours-notes p:first-child{display:none}
+ .hours-notes p:first-child{display:block}
  .reception{font-size:12px;padding:13px 0 0;font-weight:500;line-height:1.65}
  .reception h3{font-size:14px;margin:0 0 2px}
  .reception p{margin:0 0 10px}
  .reception p span{display:inline;margin-right:13px;white-space:nowrap}
  .reception .legend{margin:0}
- .reception .legend::before{content:'休診日\a木曜・土曜午後・日曜\a';white-space:pre;display:block;margin:8px 0;font-size:12px}
+ .reception .legend::before{content:none}
  .access{margin-top:58px;margin-bottom:47px}
  .access .section-title{margin-bottom:12px}
  .access-layout{display:flex;flex-direction:column;gap:14px;padding:0 16px;align-items:stretch}
@@ -447,7 +447,7 @@ table.schedule-table{
 .schedule-table tbody td{font-size:20px;font-weight:700;font-family:var(--font-rounded);padding:6px 1px}
 .schedule-table tbody tr{background:transparent;border:0}
 .schedule-table tbody th,.schedule-table tbody td{border-bottom:1px dashed #cbd1ce}
-.schedule-table .sunday{color:#f5aab1}
+.schedule-table .sunday{color:#FFC0C3}
 @media(max-width:700px){
  table.schedule-table{font-size:13px}
  .schedule-table thead th{padding:7px 0}
@@ -726,3 +726,195 @@ body#top .news{margin-top:20px}
 @media(max-width:700px){
  :is(.news-hero-photo,.page-main--services .page-hero-photo,.page-main--faq .page-hero-photo,.page-main--contact .page-hero-photo){width:100%}
 }
+/* Body copy: Japanese punctuation rules and aligned paragraph edges. */
+:is(.section-intro,.greeting-copy>p:not(.greeting-sign),.about-description>p,.service-copy p,.staff-copy p,.page-content p,.faq-answer,.news-article-copy p,.contact-web-card>p,.contact-faq-card p,.contact-form-section>p,.contact-privacy,.family-support li,.policy-table td){text-align:justify;text-justify:inter-character;line-break:strict;word-break:normal;overflow-wrap:break-word;text-wrap:pretty}
+.text-keep,.reception-line>span{white-space:nowrap}
+.reception-line{display:inline-block;max-width:100%;text-align:left;line-height:1.7}
+.hours-notes .reception-line{margin-bottom:2px}
+.contact-hours .hours-notes{font-size:13px;line-height:1.7;margin-top:12px}
+.page-main .about-details>.clinic-policy,.page-main .about-details>.clinic-future{grid-column:1/-1}
+.family-support{padding-left:1.4em;margin:16px 0 0}
+.family-support li+li{margin-top:10px}
+.policy-table{width:100%;table-layout:fixed;border-spacing:0;border:1px solid #c6dfd2;border-radius:20px 20px 0 0;overflow:hidden;margin-top:24px;font-size:15px;line-height:1.7}
+.policy-table th,.policy-table td{padding:14px 16px;vertical-align:top;border-bottom:1px solid #c6dfd2}
+.policy-table thead{background:var(--green);color:#fff;text-align:left;font-family:var(--font-rounded)}
+.policy-table thead th:first-child{width:48px;text-align:center}
+.policy-table thead th:nth-child(2){width:34%}
+.policy-table tbody th{background:var(--pale);text-align:left;font-weight:700}
+.policy-table tbody td:first-child{text-align:center;background:var(--pale)}
+.policy-table tbody tr:last-child>*{border-bottom:0}
+@media(max-width:700px){
+ .policy-table{font-size:13px}
+ .policy-table th,.policy-table td{padding:10px 8px}
+ .policy-table thead th:first-child{width:30px}
+ .policy-table thead th:nth-child(2){width:35%}
+}
+/* Reservation input demo. Styles are scoped to keep existing pages unchanged. */
+.reservation-site{--font-rounded:"Noto Sans JP",sans-serif;background:#fff}
+.reservation-page{width:min(calc(100% - 40px),760px);margin:40px auto 72px;font-family:"Noto Sans JP",sans-serif;line-height:1.8}
+.reservation-page [hidden]{display:none!important}
+.reservation-page h1{font-size:30px;margin:16px 0 10px}
+.reservation-page h2{font-size:23px;line-height:1.5;margin:0 0 28px}
+.reservation-page h3{font-size:20px;margin:0}
+.reservation-back-link{color:var(--green-dark);text-decoration:underline;text-underline-offset:4px}
+.reservation-lead{margin-bottom:24px}
+.reservation-notice{background:var(--pale);border-left:4px solid var(--green);padding:18px 20px;margin:24px 0;font-size:15px}
+.reservation-notice p{margin:6px 0 0}
+.reservation-progress{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));list-style:none;padding:0;margin:32px 0;gap:8px}
+.reservation-progress li{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;font-size:15px;border-bottom:3px solid #dce7e0;padding:0 0 12px;color:#4b5e52}
+.reservation-progress li span{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#edf2ef;font-weight:700}
+.reservation-progress [aria-current="step"]{border-color:var(--green-dark);color:var(--green-dark);font-weight:700}
+.reservation-progress [aria-current="step"] span{background:var(--green-dark);color:#fff}
+.reservation-form{border:1px solid #d2e2d9;border-radius:12px;padding:32px}
+.reservation-page fieldset{min-width:0;margin:0 0 28px;padding:0;border:0}
+.reservation-page legend,.reservation-field>label{display:block;font-size:18px;font-weight:700;margin-bottom:12px}
+.reservation-required{display:inline-block;vertical-align:middle;background:var(--pale);color:#29563b;font-size:12px;padding:1px 6px;border-radius:3px;margin-left:6px}
+.reservation-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.reservation-options label,.reservation-time-options label{display:flex;align-items:center;gap:10px;min-height:52px;padding:12px 16px;border:1px solid #a9bcb0;border-radius:6px;cursor:pointer;background:#fff}
+.reservation-page input[type="radio"]{width:20px;height:20px;margin:0;flex:none;accent-color:var(--green-dark)}
+.reservation-options label:has(:checked),.reservation-time-options label:has(:checked){background:var(--green-dark);border-color:var(--green-dark);color:#fff}
+.reservation-page :focus-visible{outline:3px solid #177abc;outline-offset:3px}
+.reservation-page button,.reservation-page input{font:inherit}
+.reservation-page button{cursor:pointer}
+.reservation-page button:disabled{cursor:not-allowed}
+.reservation-help{color:#455b4c;font-size:14px;margin:0 0 16px}
+.reservation-calendar{border:1px solid #c8dbd0;border-radius:8px;padding:16px}
+.reservation-calendar-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}
+.reservation-calendar-nav button{width:44px;height:44px;border:1px solid #a9bcb0;border-radius:6px;background:#fff;font-size:26px}
+.reservation-calendar table{width:100%;table-layout:fixed;border-collapse:collapse;text-align:center}
+.reservation-calendar th{font-weight:500;padding-bottom:8px;font-size:14px}
+.reservation-calendar td{padding:3px}
+.reservation-calendar td button{width:100%;min-height:44px;border:1px solid #b8d3c3;border-radius:5px;background:var(--pale);color:var(--ink);padding:6px 0}
+.reservation-calendar td button[aria-pressed="true"]{background:var(--green-dark);border-color:var(--green-dark);color:#fff;font-weight:700}
+.reservation-calendar button:disabled{background:#f1f2f1;color:#6a716c;border-color:#e4e7e5}
+.reservation-calendar .reservation-help{margin:12px 0 0}
+.reservation-time-options{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.reservation-time-options label{justify-content:center;gap:6px;padding:10px 6px;font-size:16px}
+.reservation-field{margin-bottom:24px}
+.reservation-field input{width:100%;min-height:52px;padding:12px;border:1px solid #94a69b;border-radius:5px;background:#fff;color:var(--ink)}
+.reservation-field input[aria-invalid="true"]{border:2px solid #b32f2f}
+.reservation-error{color:#a51f24;font-size:14px;margin:8px 0 0;line-height:1.6}
+.reservation-error:empty{display:none}
+.reservation-review{margin:24px 0;border-top:1px solid #d2e2d9}
+.reservation-review>div{display:grid;grid-template-columns:150px minmax(0,1fr);border-bottom:1px solid #d2e2d9}
+.reservation-review dt{background:var(--pale);font-weight:700;padding:14px}
+.reservation-review dd{margin:0;padding:14px;overflow-wrap:anywhere;white-space:pre-wrap}
+.reservation-edit-links{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:24px}
+.reservation-edit-links button{border:1px solid #8ba996;color:var(--green-dark);background:#fff;border-radius:5px;padding:10px 14px}
+.reservation-actions{display:flex;justify-content:space-between;gap:16px;margin-top:32px}
+.reservation-button{display:inline-flex;justify-content:center;align-items:center;min-height:52px;min-width:150px;border:1px solid var(--green-dark);border-radius:8px;padding:12px 24px;background:var(--green-dark);color:#fff;font-weight:700}
+.reservation-button-back{background:#fff;color:var(--green-dark)}
+#reservation-next{margin-left:auto}
+.reservation-confirm{width:100%;background:#e1e7e3;color:#49594f;border-color:#d0dad4}
+.reservation-step-status{text-align:center;font-size:14px;color:#455b4c;margin:18px 0 0}
+@media(max-width:700px){
+ .reservation-page{width:calc(100% - 32px);margin:26px auto 44px}
+ .reservation-page h1{font-size:26px}
+ .reservation-page h2{font-size:21px}
+ .reservation-notice{padding:16px;font-size:14px}
+ .reservation-progress{gap:4px;margin:26px 0}
+ .reservation-progress li{font-size:12px}
+ .reservation-form{padding:20px 14px}
+ .reservation-options{grid-template-columns:minmax(0,1fr)}
+ .reservation-time-options{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .reservation-calendar{padding:12px 4px}
+ .reservation-calendar-nav{padding-inline:8px}
+ .reservation-calendar td{padding:2px}
+ .reservation-calendar td button{min-height:42px}
+ .reservation-calendar .reservation-help{padding-inline:8px}
+ .reservation-review>div{grid-template-columns:minmax(0,1fr)}
+ .reservation-review dt{padding:10px 12px}
+ .reservation-review dd{padding:12px}
+ .reservation-button{min-width:0;flex:1;padding-inline:16px}
+}
+/* Align hours labels and colons, allowing the time values to wrap on phones. */
+.hours-info-row{display:grid;grid-template-columns:4em .8em minmax(0,1fr);align-items:start;text-align:left;line-height:1.7}
+.hours-info-label{white-space:nowrap;text-align:justify;text-align-last:justify;text-justify:inter-character}
+.hours-info-value{min-width:0;overflow-wrap:break-word}
+.hours-period{display:inline-block;white-space:nowrap}
+.schedule-notes{font-size:14px;line-height:1.7;margin-top:10px;text-align:left}
+.schedule-notes p{font:inherit;line-height:inherit;margin:0}
+.contact-phone-card .hours-info-row{font-size:14px;margin-bottom:6px}
+:is(#top #hours,.page-main--hours-access #hours) .hours-layout{display:block;width:min(100%,900px);padding:0;margin-inline:auto}
+:is(#top #hours,.page-main--hours-access #hours) .hours-table-wrap{padding:22px;border:1px solid #e3ede6;border-radius:27px;background:rgba(255,255,255,.94)}
+:is(#top #hours,.page-main--hours-access #hours) .schedule-table{font-size:18px}
+:is(#top #hours,.page-main--hours-access #hours) .schedule-table th:first-child{width:140px}
+:is(#top #hours,.page-main--hours-access #hours) .schedule-table thead th{padding-block:11px}
+:is(#top #hours,.page-main--hours-access #hours) .schedule-table tbody th{font-size:17px;padding-block:10px}
+:is(#top #hours,.page-main--hours-access #hours) .schedule-table tbody td{font-size:22px;padding-block:8px}
+:is(#top #hours,.page-main--hours-access #hours) .schedule-notes{font-size:18px;line-height:1.8;margin-top:14px}
+:is(#top #hours,.page-main--hours-access #hours) .schedule-notes>p:last-child{margin-top:4px}
+@media(max-width:700px){
+ :is(#top #hours,.page-main--hours-access #hours) .hours-table-wrap{padding:0;border:0;border-radius:0;background:transparent}
+ :is(#top #hours,.page-main--hours-access #hours) .schedule-table{font-size:14px}
+ :is(#top #hours,.page-main--hours-access #hours) .schedule-table th:first-child{width:100px}
+ :is(#top #hours,.page-main--hours-access #hours) .schedule-table thead th{padding-block:9px}
+ :is(#top #hours,.page-main--hours-access #hours) .schedule-table tbody th{font-size:13px;padding-block:8px}
+ :is(#top #hours,.page-main--hours-access #hours) .schedule-table tbody td{font-size:17px;padding-block:5px}
+ :is(#top #hours,.page-main--hours-access #hours) .schedule-notes{font-size:16px}
+}
+/* TOP first-view refinement; photos, slide animation and other sections stay intact. */
+#top .hero-message h1{font-size:44px;font-weight:700;color:#1f302b}
+#top .hero-message p{font-size:18px;font-weight:400;color:#43534d;line-height:1.65}
+#top .hero-hours{width:576px;padding:14px 18px 12px}
+#top :is(.hero-hours,.mobile-opening-hours) .schedule-table thead{background:#087c42}
+#top :is(.hero-hours,.mobile-opening-hours) .schedule-table thead .sunday{color:#FFC0C3}
+#top .hero-hours .schedule-table thead th{padding-block:7px}
+#top .hero-hours .schedule-table tbody th{padding-block:6px}
+#top .hero-hours .schedule-table tbody td{padding-block:4px}
+#top .hero-cta .cta{grid-template-columns:28px minmax(0,1fr) 28px;gap:14px}
+#top .hero-cta .cta>span:nth-child(2){font-size:22px;white-space:nowrap}
+#top .hero-cta .cta svg,#top .hero-cta .cta .cta-icon{width:28px;height:28px}
+#top .hero-cta .cta-phone{background:#087c42}
+#top .hero-cta .cta-book{background:#d8eef8;color:#214e68}
+#top .hero-cta .cta-book .cta-icon{filter:brightness(0) saturate(100%) invert(25%) sepia(25%) saturate(1100%) hue-rotate(157deg) brightness(92%) contrast(90%)}
+@media(min-width:701px) and (max-width:1180px){
+ #top .hero-message h1{font-size:40px}
+ #top .hero-hours{width:504px}
+ #top .hero-cta .cta{gap:10px;padding-inline:14px}
+ #top .hero-cta .cta>span:nth-child(2){font-size:20px}
+}
+@media(max-width:700px){
+ #top .hero-message{background:rgba(239,249,245,.95)}
+ #top .hero-message h1{font-size:clamp(22px,6.5vw,26px)}
+ #top .hero-message p{font-size:14px;line-height:1.6}
+ #top .mobile-opening-hours .schedule-table thead th{padding-block:6px}
+ #top .mobile-opening-hours .schedule-table tbody th{padding-block:4px}
+ #top .mobile-opening-hours .schedule-table tbody td{padding-block:2px}
+ #top .hero-cta .cta{grid-template-columns:18px minmax(0,1fr) 8px;gap:4px;padding-inline:6px}
+ #top .hero-cta .cta>span:nth-child(2){font-size:clamp(11px,3.3vw,14px)}
+ #top .hero-cta .cta svg,#top .hero-cta .cta .cta-icon{width:18px;height:18px}
+}
+#top .hero-hours .schedule-notes>p:last-child{text-wrap:pretty}
+/* Mobile contact bar: a wider phone column and two compact links. */
+@media(max-width:700px){
+ body#top{padding-bottom:calc(44px + env(safe-area-inset-bottom,0px))}
+ html:has(body#top){scroll-padding-bottom:calc(44px + env(safe-area-inset-bottom,0px))}
+ #top .hero-cta{grid-template-columns:minmax(0,1.8fr) minmax(0,1.15fr) minmax(0,1fr);grid-template-rows:44px}
+ #top .hero-cta .cta{grid-column:auto;grid-row:auto;grid-template-columns:16px minmax(0,1fr) 6px;gap:2px;padding-inline:3px}
+ #top .hero-cta .cta>span:nth-child(2){font-size:clamp(10px,2.8vw,12px)}
+ #top .hero-cta .cta-phone>span:nth-child(2){font-size:clamp(11px,3.2vw,14px)}
+ #top .hero-cta .cta svg,#top .hero-cta .cta .cta-icon{width:16px;height:16px}
+ #top .hero-cta .cta .chevron{font-size:16px}
+ #top .hero-cta .cta-book{border-radius:0}
+ #top .hero-cta .cta-access{border-radius:0 18px 0 0}
+ :is(#top .mobile-opening-hours,#top #hours,.page-main--hours-access #hours) .schedule-notes{font-size:clamp(10.5px,3.3vw,14px);line-height:1.8}
+ :is(#top .mobile-opening-hours,#top #hours,.page-main--hours-access #hours) .hours-info-value{white-space:nowrap}
+}
+/* Mobile inner-page photos share their original 7:4 ratio, without letterboxing. */
+@media(max-width:700px){
+ :is(.news-hero,.page-hero){height:calc(100vw * 4 / 7)}
+ .news-hero .news-hero-photo,.page-main .page-hero-photo{width:100%;object-fit:cover;object-position:right center}
+ .page-main--contact .page-hero h1{max-width:none;font-size:clamp(17px,4.8vw,21px);line-height:1.35}
+ .page-main--contact .page-hero h1 span{white-space:nowrap}
+}
+
+/* Center the TOP access details in the stacked mobile layout. */
+@media(max-width:700px){
+ #top #access .access-layout{align-items:center}
+ #top #access .map-link{margin-inline:auto}
+ #top #access .access-copy{width:100%;text-align:center}
+}
+/* Opening-hours weekday labels: consistent type with weekend accent colors. */
+.schedule-table thead th:not(:first-child){font-size:inherit;font-weight:700}
+.schedule-table thead th:nth-child(7){color:#A9D5F5}
