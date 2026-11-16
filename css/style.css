@@ -862,17 +862,17 @@ body#top .news{margin-top:20px}
 #top .hero-hours .schedule-table thead th{padding-block:7px}
 #top .hero-hours .schedule-table tbody th{padding-block:6px}
 #top .hero-hours .schedule-table tbody td{padding-block:4px}
-#top .hero-cta .cta{grid-template-columns:28px minmax(0,1fr) 28px;gap:14px}
-#top .hero-cta .cta>span:nth-child(2){font-size:22px;white-space:nowrap}
-#top .hero-cta .cta svg,#top .hero-cta .cta .cta-icon{width:28px;height:28px}
-#top .hero-cta .cta-phone{background:#087c42}
-#top .hero-cta .cta-book{background:#d8eef8;color:#214e68}
-#top .hero-cta .cta-book .cta-icon{filter:brightness(0) saturate(100%) invert(25%) sepia(25%) saturate(1100%) hue-rotate(157deg) brightness(92%) contrast(90%)}
+:is(#top .hero-cta,.mobile-contact-bar) .cta{grid-template-columns:28px minmax(0,1fr) 28px;gap:14px}
+:is(#top .hero-cta,.mobile-contact-bar) .cta>span:nth-child(2){font-size:22px;white-space:nowrap}
+:is(#top .hero-cta,.mobile-contact-bar) .cta svg,:is(#top .hero-cta,.mobile-contact-bar) .cta .cta-icon{width:28px;height:28px}
+:is(#top .hero-cta,.mobile-contact-bar) .cta-phone{background:#087c42}
+:is(#top .hero-cta,.mobile-contact-bar) .cta-book{background:#d8eef8;color:#214e68}
+:is(#top .hero-cta,.mobile-contact-bar) .cta-book .cta-icon{filter:brightness(0) saturate(100%) invert(25%) sepia(25%) saturate(1100%) hue-rotate(157deg) brightness(92%) contrast(90%)}
 @media(min-width:701px) and (max-width:1180px){
  #top .hero-message h1{font-size:40px}
  #top .hero-hours{width:504px}
- #top .hero-cta .cta{gap:10px;padding-inline:14px}
- #top .hero-cta .cta>span:nth-child(2){font-size:20px}
+ :is(#top .hero-cta,.mobile-contact-bar) .cta{gap:10px;padding-inline:14px}
+ :is(#top .hero-cta,.mobile-contact-bar) .cta>span:nth-child(2){font-size:20px}
 }
 @media(max-width:700px){
  #top .hero-message{background:rgba(239,249,245,.95)}
@@ -881,23 +881,23 @@ body#top .news{margin-top:20px}
  #top .mobile-opening-hours .schedule-table thead th{padding-block:6px}
  #top .mobile-opening-hours .schedule-table tbody th{padding-block:4px}
  #top .mobile-opening-hours .schedule-table tbody td{padding-block:2px}
- #top .hero-cta .cta{grid-template-columns:18px minmax(0,1fr) 8px;gap:4px;padding-inline:6px}
- #top .hero-cta .cta>span:nth-child(2){font-size:clamp(11px,3.3vw,14px)}
- #top .hero-cta .cta svg,#top .hero-cta .cta .cta-icon{width:18px;height:18px}
+ :is(#top .hero-cta,.mobile-contact-bar) .cta{grid-template-columns:18px minmax(0,1fr) 8px;gap:4px;padding-inline:6px}
+ :is(#top .hero-cta,.mobile-contact-bar) .cta>span:nth-child(2){font-size:clamp(11px,3.3vw,14px)}
+ :is(#top .hero-cta,.mobile-contact-bar) .cta svg,:is(#top .hero-cta,.mobile-contact-bar) .cta .cta-icon{width:18px;height:18px}
 }
 #top .hero-hours .schedule-notes>p:last-child{text-wrap:pretty}
 /* Mobile contact bar: a wider phone column and two compact links. */
 @media(max-width:700px){
  body#top{padding-bottom:calc(44px + env(safe-area-inset-bottom,0px))}
  html:has(body#top){scroll-padding-bottom:calc(44px + env(safe-area-inset-bottom,0px))}
- #top .hero-cta{grid-template-columns:minmax(0,1.8fr) minmax(0,1.15fr) minmax(0,1fr);grid-template-rows:44px}
- #top .hero-cta .cta{grid-column:auto;grid-row:auto;grid-template-columns:16px minmax(0,1fr) 6px;gap:2px;padding-inline:3px}
- #top .hero-cta .cta>span:nth-child(2){font-size:clamp(10px,2.8vw,12px)}
- #top .hero-cta .cta-phone>span:nth-child(2){font-size:clamp(11px,3.2vw,14px)}
- #top .hero-cta .cta svg,#top .hero-cta .cta .cta-icon{width:16px;height:16px}
- #top .hero-cta .cta .chevron{font-size:16px}
- #top .hero-cta .cta-book{border-radius:0}
- #top .hero-cta .cta-access{border-radius:0 18px 0 0}
+ :is(#top .hero-cta,.mobile-contact-bar){grid-template-columns:minmax(0,1.8fr) minmax(0,1.15fr) minmax(0,1fr);grid-template-rows:44px}
+ :is(#top .hero-cta,.mobile-contact-bar) .cta{grid-column:auto;grid-row:auto;grid-template-columns:16px minmax(0,1fr) 6px;gap:2px;padding-inline:3px}
+ :is(#top .hero-cta,.mobile-contact-bar) .cta>span:nth-child(2){font-size:clamp(10px,2.8vw,12px)}
+ :is(#top .hero-cta,.mobile-contact-bar) .cta-phone>span:nth-child(2){font-size:clamp(11px,3.2vw,14px)}
+ :is(#top .hero-cta,.mobile-contact-bar) .cta svg,:is(#top .hero-cta,.mobile-contact-bar) .cta .cta-icon{width:16px;height:16px}
+ :is(#top .hero-cta,.mobile-contact-bar) .cta .chevron{font-size:16px}
+ :is(#top .hero-cta,.mobile-contact-bar) .cta-book{border-radius:0}
+ :is(#top .hero-cta,.mobile-contact-bar) .cta-access{border-radius:0 18px 0 0}
  :is(#top .mobile-opening-hours,#top #hours,.page-main--hours-access #hours) .schedule-notes{font-size:clamp(10.5px,3.3vw,14px);line-height:1.8}
  :is(#top .mobile-opening-hours,#top #hours,.page-main--hours-access #hours) .hours-info-value{white-space:nowrap}
 }
@@ -918,3 +918,187 @@ body#top .news{margin-top:20px}
 /* Opening-hours weekday labels: consistent type with weekend accent colors. */
 .schedule-table thead th:not(:first-child){font-size:inherit;font-weight:700}
 .schedule-table thead th:nth-child(7){color:#A9D5F5}
+/* Supplied copy added to the hours/access page using the existing content width. */
+.hours-subjects{margin-top:32px}
+.hours-subjects ul{padding-left:1.4em;margin:0;line-height:1.8}
+.hours-subjects li+li{margin-top:6px}
+.page-main--hours-access .access-guidance{margin:24px 0 0}
+/* Improve small mobile body copy and supporting information. */
+@media(max-width:700px){
+ .footer-notice{font-size:13px;line-height:1.7;max-width:none}
+ .access-copy,.contact-box{font-size:14px;line-height:1.7}
+ .contact-box .contact-note{font-size:13px;line-height:1.7;white-space:normal}
+ .reference-map-note{font-size:13px;line-height:1.6}
+ .news-list time,.news-list .news-date,.staff-role{font-size:13px}
+ .news-list a{grid-template-columns:88px minmax(0,1fr) 13px}
+ .pill-link{font-size:13px}
+ .contact-privacy{font-size:14px;line-height:1.7}
+ .contact-required,.contact-optional{font-size:13px}
+ .reservation-required,.reservation-progress li{font-size:13px}
+ .reservation-page{font-size:16px}
+ :is(#top .mobile-opening-hours,#top #hours,.page-main--hours-access #hours) .schedule-notes{font-size:14px;line-height:1.8}
+ .hours-time-gap{font-size:0}
+ .hours-notes,.reception{font-size:14px;line-height:1.7}
+ .schedule-table tbody th{font-size:13px}
+ .schedule-table th:first-child{width:100px}
+ .hours-subjects{margin-top:26px}
+}
+@media(max-width:700px){
+ .page-main .staff-detail p{font-size:14px;line-height:1.7}
+}
+@media(max-width:360px){
+ .schedule-notes .hours-info-value{letter-spacing:-.03em}
+}
+.page-main--hours-access .hours-subjects-note{margin:16px 0 0}
+/* BEGIN inner-page typography trial: remove this block to restore the previous treatment. */
+:is(.subpage-main,.reservation-page){color:#43534d;font-weight:400}
+.subpage-main{font-family:var(--font-rounded)}
+:is(.subpage-main,.reservation-page) :is(h1,h2,h3){color:#1f302b;font-weight:700}
+.page-main .faq-item summary{color:#1f302b;font-weight:700}
+.page-main--about .page-content .page-intro,.page-main--services .page-content .page-intro{font-weight:700;color:#1f302b}
+.subpage-main .schedule-table thead{background:#087c42}
+.subpage-main .pill-link{background:#087c42}
+.page-content,.page-main .faq-item .faq-answer,.news-article p{font-size:18px}
+.contact-web-card>p,.contact-form-section>p{font-size:18px;line-height:1.65}
+@media(min-width:701px) and (max-width:1180px){
+ :is(.news-hero,.page-hero) h1{font-size:40px}
+ .page-content,.page-main .faq-item .faq-answer,.news-article p{font-size:16px}
+ .contact-web-card>p,.contact-form-section>p{font-size:16px}
+}
+@media(max-width:700px){
+ .page-content,.page-main .faq-item .faq-answer,.news-article p{font-size:14px}
+ .contact-web-card>p,.contact-form-section>p{font-size:14px}
+}
+/* END inner-page typography trial */
+/* Give the TOP phone number slightly more emphasis within the existing button. */
+:is(#top .hero-cta,.mobile-contact-bar) .cta-phone>span:nth-child(2){font-size:26px}
+@media(min-width:701px) and (max-width:1180px){
+ :is(#top .hero-cta,.mobile-contact-bar) .cta-phone>span:nth-child(2){font-size:clamp(20px,2.8vw,24px)}
+}
+@media(max-width:700px){
+ :is(#top .hero-cta,.mobile-contact-bar) .cta-phone>span:nth-child(2){font-size:clamp(13px,3.8vw,16px)}
+}
+/* BEGIN TOP typography trial: match the established first-view treatment. */
+#top main{font-family:var(--font-rounded);color:#43534d}
+#top main :is(h1,h2,h3){color:#1f302b;font-weight:700}
+#top :is(.greeting-copy,.section-intro,.service-copy p,.staff-copy p,.about-description,.access-copy){font-weight:400;color:#43534d}
+#top .greeting-copy .greeting-sign{font-weight:700;color:#1f302b}
+#top .news-list a>span:nth-child(2){font-weight:700;color:#1f302b}
+:is(#top .hero-cta,.mobile-contact-bar) .cta-access{color:#1f302b}
+#top .schedule-table thead,#top .pill-link{background:#087c42}
+#top :is(.service-card:hover .service-copy h3,.staff-card:hover h3),#top .news-list a:hover>span:nth-child(2){color:#087c42}
+/* Explicit text styles elsewhere follow the same body and heading treatment. */
+.subpage-main :is(.access-copy,.hours-notes,.reception){font-weight:400;color:#43534d}
+.subpage-main .contact-phone-number{font-weight:700}
+main .reference-map-note{color:#43534d}
+/* END TOP typography trial */
+/* Medium-weight body copy for improved legibility; heading sizes/weights are retained. */
+#top main,:is(.subpage-main,.reservation-page){font-weight:500}
+#top :is(.greeting-copy,.section-intro,.service-copy p,.staff-copy p,.about-description,.access-copy){font-weight:500}
+.subpage-main :is(.access-copy,.hours-notes,.reception){font-weight:500}
+#top .hero-message p{font-weight:500}
+.schedule-table tbody th{font-weight:500}
+/* Reuse the TOP contact bar on inner pages only at mobile widths. */
+.mobile-contact-bar{display:none}
+@media(max-width:700px){
+ .mobile-contact-bar{display:grid}
+ body.has-mobile-contact-bar{padding-bottom:calc(44px + env(safe-area-inset-bottom,0px))}
+ html:has(body.has-mobile-contact-bar){scroll-padding-bottom:calc(44px + env(safe-area-inset-bottom,0px))}
+}
+/* Shared accessibility controls: ordinary styling stays unchanged at 100%. */
+[data-site-ui][hidden],#faq-results [hidden],.faq-search [hidden]{display:none!important}
+.visually-hidden{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+html[data-reader-pending] body{visibility:hidden}
+.text-size-controls{flex:none;display:flex;flex-direction:column;align-items:center;gap:4px;color:#1f302b;font:500 13px/1.5 "Noto Sans JP",sans-serif}
+.text-size-options{display:flex;gap:3px}
+.text-size-options button{min-width:38px;min-height:32px;border:1px solid #b7cebf;border-radius:4px;background:#fff;color:#24563c;padding:4px 6px;font:inherit;cursor:pointer}
+.text-size-options button[aria-pressed="true"]{background:#087c42;border-color:#087c42;color:#fff}
+.text-size-options button:focus-visible,.page-scroll-controls button:focus-visible,.faq-search :focus-visible{outline:3px solid #177abc;outline-offset:3px}
+.text-size-controls--mobile{display:none}
+.header-inner{column-gap:20px}
+.faq-search{margin:28px 0 32px}
+.faq-search-field{display:flex;align-items:center;gap:12px;padding:10px 14px;background:#fff;border:1px solid #c8d0cb;border-radius:8px}
+.faq-search-field:focus-within{border-color:#087c42;box-shadow:0 0 0 2px #087c4220}
+.faq-search-field svg{width:22px;height:22px;flex:none;color:#087c42}
+.faq-search input{width:100%;min-width:0;border:0;background:transparent;color:#43534d;font:inherit;font-size:16px;line-height:1.6;min-height:30px;padding:0;outline:none}
+.faq-search input::-webkit-search-cancel-button{display:none}
+.faq-search-clear{flex:none;display:grid;place-items:center;width:36px;height:36px;border:0;border-radius:50%;background:#edf5f0;color:#087c42;font:400 25px/1 sans-serif;cursor:pointer}
+.faq-search .faq-search-status{font-size:14px;line-height:1.6;margin:10px 0 0;color:#43534d}
+.page-scroll-controls{display:none;position:fixed;right:max(12px,env(safe-area-inset-right,0px));bottom:var(--scroll-buttons-bottom,calc(60px + env(safe-area-inset-bottom,0px)));z-index:80;gap:8px}
+.page-scroll-controls button{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1px solid #b7d4c2;background:#fff;color:#087c42;box-shadow:0 2px 8px #173e2920;padding:0;cursor:pointer;transition:background .15s,transform .15s}
+.page-scroll-controls svg{width:20px;height:20px}
+.page-scroll-controls button:active:not(:disabled){background:#eaf7f1;transform:scale(.94)}
+.page-scroll-controls button:disabled{color:#9eafa5;border-color:#dbe5df;box-shadow:none;cursor:default}
+html:not([data-reader-size="standard"])[data-reader-size] [data-reader-base]{font-size:calc(var(--reader-base-size) * var(--reader-scale))!important}
+html:not([data-reader-size="standard"])[data-reader-size] svg[data-reader-icon]{width:var(--reader-icon-width)!important;height:var(--reader-icon-height)!important}
+html:not([data-reader-size="standard"])[data-reader-size] .hours-info-row{grid-template-columns:calc(4em * var(--reader-scale)) calc(.8em * var(--reader-scale)) minmax(0,1fr)}
+html:not([data-reader-size="standard"])[data-reader-size] .hours-info-value{white-space:normal!important;letter-spacing:normal}
+html:not([data-reader-size="standard"])[data-reader-size] .greeting .greeting-photo{height:var(--reader-greeting-height,auto);align-self:start}
+html:not([data-reader-size="standard"])[data-reader-size] .contact-form-row label{flex-wrap:wrap}
+@media(max-width:767px){.page-scroll-controls:not([hidden]){display:grid}}
+@media(max-width:700px){
+ .text-size-controls--desktop{display:none}
+ .text-size-controls--mobile{display:flex;align-items:flex-start;padding:0 0 12px;margin-bottom:4px;border-bottom:1px solid #dce8e0}
+ .text-size-options button{min-height:36px;min-width:50px}
+ .mobile-menu{max-height:calc(100dvh - 90px);overflow-y:auto}
+ .faq-search{margin:24px 0}
+ html:not([data-reader-size="standard"])[data-reader-size] .schedule-table th:first-child{width:116px!important;padding-left:2px;padding-right:4px}
+ html:not([data-reader-size="standard"])[data-reader-size] .schedule-table tbody td{padding-inline:0}
+ html:not([data-reader-size="standard"])[data-reader-size] :is(.hero-cta,.mobile-contact-bar){grid-template-columns:minmax(0,1.9fr) minmax(0,1.4fr) minmax(0,1.1fr)}
+ html:not([data-reader-size="standard"])[data-reader-size] :is(.hero-cta,.mobile-contact-bar) .cta{grid-template-columns:16px minmax(0,1fr);gap:3px}
+ html:not([data-reader-size="standard"])[data-reader-size] :is(.hero-cta,.mobile-contact-bar) .chevron{display:none}
+ html:not([data-reader-size="standard"])[data-reader-size] .staff-copy h3{white-space:normal;display:block}
+}
+@media(prefers-reduced-motion:reduce){.page-scroll-controls button{transition:none}}
+body:has(.mobile-nav[open]) .page-scroll-controls{visibility:hidden;pointer-events:none}
+/* Give enlarged fixed-bar labels real layout room, including legacy ID rules. */
+@media(max-width:700px){
+ html:not([data-reader-size="standard"])[data-reader-size] :is(.hero-cta,.mobile-contact-bar){grid-template-columns:minmax(0,1.9fr) minmax(0,1.4fr) minmax(0,1.1fr)!important}
+ html:not([data-reader-size="standard"])[data-reader-size] :is(.hero-cta,.mobile-contact-bar) .cta{grid-template-columns:16px minmax(0,1fr)!important;gap:3px!important}
+ html:not([data-reader-size="standard"])[data-reader-size] .page-main--contact .page-hero h1{max-width:65%}
+}
+@media(min-width:701px) and (max-width:1180px){
+ html:not([data-reader-size="standard"])[data-reader-size] #top .hero-cta .cta{grid-template-columns:28px minmax(0,1fr);gap:8px;padding-inline:8px}
+ html:not([data-reader-size="standard"])[data-reader-size] #top .hero-cta .chevron{display:none}
+}
+.page-main #faq-results>.faq-group{margin:0 0 48px}
+@media(max-width:700px){.page-main #faq-results>.faq-group{margin-bottom:32px}}
+/* Reflow the TOP message/table only when larger text needs extra vertical room. */
+@media(min-width:701px){
+ html:not([data-reader-size="standard"])[data-reader-size] #top .hero{height:auto;min-height:600px}
+ html:not([data-reader-size="standard"])[data-reader-size] #top .hero-content{height:auto;min-height:600px;display:flex;flex-direction:column;align-items:flex-start;gap:20px;padding-top:40px;padding-bottom:96px}
+ html:not([data-reader-size="standard"])[data-reader-size] #top .hero-message{position:static;margin-left:18px}
+ html:not([data-reader-size="standard"])[data-reader-size] #top .hero-hours{position:static}
+ html:not([data-reader-size="standard"])[data-reader-size] #top .hero-photo{height:600px}
+}
+@media(min-width:701px) and (max-width:1180px){
+ html[data-reader-size="standard"] #top .hero-hours{top:224px}
+ html:not([data-reader-size="standard"])[data-reader-size] #top .hero{min-height:560px}
+ html:not([data-reader-size="standard"])[data-reader-size] #top .hero-content{min-height:560px}
+ html:not([data-reader-size="standard"])[data-reader-size] #top .hero-photo{height:560px}
+}
+@media(max-width:700px){
+ html:not([data-reader-size="standard"])[data-reader-size] #top .hero-content{height:auto;padding-top:338px}
+ html:not([data-reader-size="standard"])[data-reader-size] #top .hero-message{position:static;width:100%}
+}
+.page-scroll-controls{--scroll-safe-area:env(safe-area-inset-bottom,0px)}
+html:not([data-reader-size="standard"])[data-reader-size] .faq-item>summary::after{font-size:var(--reader-base-size)}
+@media(max-width:700px){.mobile-menu{max-height:calc(100dvh - 110px - env(safe-area-inset-bottom,0px))}}
+.footer-copyright{margin:10px auto 0;text-align:center;color:#43534d;font-size:13px;line-height:1.6}
+/* A roomier mobile contact bar, with readable labels and adequate touch height. */
+@media(max-width:700px){
+ :is(body#top,body.has-mobile-contact-bar){padding-bottom:calc(56px + env(safe-area-inset-bottom,0px))}
+ html:has(body#top),html:has(body.has-mobile-contact-bar){scroll-padding-bottom:calc(56px + env(safe-area-inset-bottom,0px))}
+ :is(#top .hero-cta,.mobile-contact-bar){grid-template-columns:minmax(0,1.85fr) minmax(0,1.35fr) minmax(0,1.05fr);grid-template-rows:56px}
+ :is(#top .hero-cta,.mobile-contact-bar) .cta{height:56px;min-height:56px;grid-template-columns:18px minmax(0,1fr);gap:3px}
+ :is(#top .hero-cta,.mobile-contact-bar) .cta>span:nth-child(2){font-size:clamp(12px,3.5vw,13.5px)}
+ :is(#top .hero-cta,.mobile-contact-bar) .cta-phone>span:nth-child(2){font-size:clamp(14px,4.1vw,17px)}
+ :is(#top .hero-cta,.mobile-contact-bar) .cta svg,:is(#top .hero-cta,.mobile-contact-bar) .cta .cta-icon{width:18px;height:18px}
+ :is(#top .hero-cta,.mobile-contact-bar) .chevron{display:none}
+ .mobile-menu{max-height:calc(100dvh - 122px - env(safe-area-inset-bottom,0px))}
+ html:not([data-reader-size="standard"])[data-reader-size] :is(.hero-cta,.mobile-contact-bar) .cta{grid-template-columns:minmax(0,1fr)!important;grid-template-rows:18px auto;justify-items:center;align-content:center;gap:3px!important}
+}
+/* Center the phone icon and number together instead of pinning the icon left. */
+@media(max-width:700px){
+ :is(#top .hero-cta,.mobile-contact-bar) .cta-phone{grid-template-columns:18px max-content;justify-content:center;column-gap:6px}
+}

@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="robots" content="noindex, nofollow"><meta name="description" content="佐藤医院の学習用サンプルサイトです。"><title>診療時間・アクセス | 佐藤医院</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="./css/style.css"></head><body><header class="site-header">
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="robots" content="noindex, nofollow"><meta name="description" content="佐藤医院の学習用サンプルサイトです。"><title>診療時間・アクセス | 佐藤医院</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="./css/style.css"><script src="./js/site-features.js"></script></head><body class="has-mobile-contact-bar"><header class="site-header">
     <div class="header-inner container">
       <a href="./index.html" class="site-logo" aria-label="佐藤医院 トップページ"><img src="./img/Logo/logo.png" alt="佐藤医院 Sato Clinic" width="500" height="150"></a>
       <nav class="desktop-nav" aria-label="メインナビゲーション">
@@ -12,6 +12,7 @@
       </nav>
       <details class="mobile-nav"><summary aria-label="メニューを開く"><span></span><span></span><span></span></summary>
         <nav class="mobile-menu" aria-label="モバイルナビゲーション">
+        <div class="text-size-controls text-size-controls--mobile" role="group" aria-label="文字サイズ" data-site-ui hidden><span class="text-size-label">文字サイズ</span><div class="text-size-options"><button type="button" data-text-size="standard" aria-pressed="true">標準</button><button type="button" data-text-size="large" aria-pressed="false">大</button><button type="button" data-text-size="extra-large" aria-pressed="false">特大</button></div></div>
         <a href="./index.html">トップ</a>
         <a href="./news.html">お知らせ</a>
         <a href="./services.html">診療内容</a>
@@ -21,6 +22,7 @@
         <a href="./contact.html">お問い合わせ・Web予約</a>
       </nav>
       </details>
+      <div class="text-size-controls text-size-controls--desktop" role="group" aria-label="文字サイズ" data-site-ui hidden><span class="text-size-label">文字サイズ</span><div class="text-size-options"><button type="button" data-text-size="standard" aria-pressed="true">標準</button><button type="button" data-text-size="large" aria-pressed="false">大</button><button type="button" data-text-size="extra-large" aria-pressed="false">特大</button></div></div>
     </div>
   </header>
 
@@ -31,9 +33,12 @@
   </section>    <section class="hours section container subpage-hours page-section" id="hours">
     <h2 class="section-title rule-title">診療時間</h2>
     <div class="page-content">
+      <p class="hours-intro">佐藤医院では、患者様のご都合に合わせた診療を提供できるよう、柔軟な診療時間を設けております。以下をご確認のうえ、ご来院の際にご利用ください。</p>
 
       <div class="hours-layout"><div class="hours-table-wrap"><table class="hours-table schedule-table"><thead><tr><th><span class="schedule-label"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18"/></svg><span>診療時間</span></span></th><th>月</th><th>火</th><th>水</th><th>木</th><th>金</th><th>土</th><th class="sunday">日</th></tr></thead><tbody><tr><th scope="row">9:00〜12:00</th><td>●</td><td>●</td><td>●</td><td>／</td><td>●</td><td>●</td><td>／</td></tr><tr><th scope="row">13:00〜18:00</th><td>●</td><td>●</td><td>●</td><td>／</td><td>●</td><td>／</td><td>／</td></tr></tbody></table>
-        <div class="schedule-notes"><p>●＝診療　／＝休診</p><div class="hours-info-row"><span class="hours-info-label">受付時間</span><span>：</span><span class="hours-info-value"><span class="hours-period">午前　8:00〜11:00</span><span class="hours-period">　／　午後　12:00〜17:00</span></span></div><div class="hours-info-row"><span class="hours-info-label">休診日</span><span>：</span><span class="hours-info-value">木曜・土曜午後・日曜</span></div><p>※祝祭日も診療を行っておりますが、休診日もございますので、事前にご確認ください。</p></div></div></div>
+        <div class="schedule-notes"><p>●＝診療　／＝休診</p><div class="hours-info-row"><span class="hours-info-label">受付時間</span><span>：</span><span class="hours-info-value"><span class="hours-period">午前<span class="hours-time-gap">　</span>8:00〜11:00</span><span class="hours-period"><span class="hours-time-gap">　</span>／<span class="hours-time-gap">　</span>午後<span class="hours-time-gap">　</span>12:00〜17:00</span></span></div><div class="hours-info-row"><span class="hours-info-label">休診日</span><span>：</span><span class="hours-info-value">木曜・土曜午後・日曜</span></div><p>※祝祭日も診療を行っておりますが、休診日もございますので、事前にご確認ください。</p></div></div></div>
+
+      <section class="hours-subjects" aria-labelledby="hours-subjects-title"><h3 id="hours-subjects-title">診療科目</h3><ul><li>内科</li><li>循環器科</li><li>呼吸器科</li><li>予防医療・健康診断</li><li>生活習慣病（高血圧、糖尿病等）の治療・管理</li></ul><p class="hours-subjects-note">その他、ご不明点があればお電話またはメールでお問い合わせください。</p></section>
     </div>
   </section>
 
@@ -47,6 +52,7 @@
         </div>
 
         <div class="access-copy"><h3>所在地</h3><address>〒123-4567<br>東京都台東区上野 0-0-0</address><p>JR上野駅より徒歩5分<br>当院専用 無料駐車場10台分</p></div></div>
+      <p class="access-guidance">ご来院の際は、交通状況にご注意ください。最寄駅から徒歩5分の便利な立地です。</p>
       <div class="contact-box" id="contact"><h3>お問い合わせ</h3><div><p>お電話：<a href="tel:0000000000">00-0000-0000</a><br>ＦＡＸ：00-0000-0000<br>メール：<a href="mailto:info@sato-clinic-test.jp">info@sato-clinic-test.jp</a></p><p class="contact-note">その他、ご不明点があればお電話またはメールでお問い合わせください。</p></div></div>
     </div>
   </section>
@@ -59,5 +65,16 @@
         <a href="./hours-access.html">診療時間・アクセス</a>
         <a href="./faq.html">よくあるご質問</a>
         <a href="./contact.html">お問い合わせ・Web予約</a>
-      </nav></div><p class="footer-notice container">本サイトは職業訓練の学習用に制作した架空のサンプルサイトです。掲載している医院・人物・連絡先・所在地はすべて架空であり、実在のものとは関係ありません。</p></footer>
+      </nav></div><p class="footer-notice container">本サイトは職業訓練の学習用に制作した架空のサンプルサイトです。掲載している医院・人物・連絡先・所在地はすべて架空であり、実在のものとは関係ありません。</p><p class="footer-copyright container">©︎佐藤医院</p></footer>
+
+  <nav class="hero-cta mobile-contact-bar" aria-label="お問い合わせメニュー">
+        <a class="cta cta-phone" href="tel:0000000000"><img class="cta-icon cta-icon-phone" src="./img/Logo/phone.png" alt="" width="33" height="33"><span>00-0000-0000</span><span aria-hidden="true" class="chevron">›</span></a>
+        <a class="cta cta-book" href="./contact.html" aria-label="お問い合わせ・Web予約のご案内へ" title="お問い合わせ・Web予約のご案内ページを開きます。予約・送信機能は未実装です。"><img class="cta-icon" src="./img/Logo/icon1.png" alt="" width="33" height="33"><span>お問い合わせ</span><span aria-hidden="true" class="chevron">›</span></a>
+        <a class="cta cta-access" href="./hours-access.html#access"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.3 7-13a7 7 0 0 0-14 0c0 6.7 7 13 7 13Z"/><circle cx="12" cy="9" r="2.5"/></svg><span>アクセス</span><span aria-hidden="true" class="chevron">›</span></a>
+      </nav>
+  <div class="page-scroll-controls" role="group" aria-label="ページ内の移動" data-site-ui hidden>
+    <button type="button" data-scroll-direction="top" aria-label="ページの先頭へ移動"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 12 6-6 6 6M12 6v14"/></svg></button>
+    <button type="button" data-scroll-direction="bottom" aria-label="ページの末尾へ移動"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 12 6 6 6-6M12 18V4"/></svg></button>
+  </div>
+  <p class="visually-hidden" id="text-size-status" role="status" aria-live="polite"></p>
 </body></html>

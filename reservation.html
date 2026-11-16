@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="robots" content="noindex, nofollow"><meta name="description" content="佐藤医院の学習用サンプルサイトです。"><title>Web予約（デモ） | 佐藤医院</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="./css/style.css"><script src="./js/reservation.js" defer></script></head><body class="reservation-site"><header class="site-header">
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="robots" content="noindex, nofollow"><meta name="description" content="佐藤医院の学習用サンプルサイトです。"><title>Web予約（デモ） | 佐藤医院</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="./css/style.css"><script src="./js/reservation.js" defer></script><script src="./js/site-features.js"></script></head><body class="reservation-site has-mobile-contact-bar"><header class="site-header">
     <div class="header-inner container">
       <a href="./index.html" class="site-logo" aria-label="佐藤医院 トップページ"><img src="./img/Logo/logo.png" alt="佐藤医院 Sato Clinic" width="500" height="150"></a>
       <nav class="desktop-nav" aria-label="メインナビゲーション">
@@ -12,6 +12,7 @@
       </nav>
       <details class="mobile-nav"><summary aria-label="メニューを開く"><span></span><span></span><span></span></summary>
         <nav class="mobile-menu" aria-label="モバイルナビゲーション">
+        <div class="text-size-controls text-size-controls--mobile" role="group" aria-label="文字サイズ" data-site-ui hidden><span class="text-size-label">文字サイズ</span><div class="text-size-options"><button type="button" data-text-size="standard" aria-pressed="true">標準</button><button type="button" data-text-size="large" aria-pressed="false">大</button><button type="button" data-text-size="extra-large" aria-pressed="false">特大</button></div></div>
         <a href="./index.html">トップ</a>
         <a href="./news.html">お知らせ</a>
         <a href="./services.html">診療内容</a>
@@ -21,6 +22,7 @@
         <a href="./contact.html">お問い合わせ・Web予約</a>
       </nav>
       </details>
+      <div class="text-size-controls text-size-controls--desktop" role="group" aria-label="文字サイズ" data-site-ui hidden><span class="text-size-label">文字サイズ</span><div class="text-size-options"><button type="button" data-text-size="standard" aria-pressed="true">標準</button><button type="button" data-text-size="large" aria-pressed="false">大</button><button type="button" data-text-size="extra-large" aria-pressed="false">特大</button></div></div>
     </div>
   </header>
 
@@ -103,5 +105,16 @@
         <a href="./hours-access.html">診療時間・アクセス</a>
         <a href="./faq.html">よくあるご質問</a>
         <a href="./contact.html">お問い合わせ・Web予約</a>
-      </nav></div><p class="footer-notice container">本サイトは職業訓練の学習用に制作した架空のサンプルサイトです。掲載している医院・人物・連絡先・所在地はすべて架空であり、実在のものとは関係ありません。</p></footer>
+      </nav></div><p class="footer-notice container">本サイトは職業訓練の学習用に制作した架空のサンプルサイトです。掲載している医院・人物・連絡先・所在地はすべて架空であり、実在のものとは関係ありません。</p><p class="footer-copyright container">©︎佐藤医院</p></footer>
+
+  <nav class="hero-cta mobile-contact-bar" aria-label="お問い合わせメニュー">
+        <a class="cta cta-phone" href="tel:0000000000"><img class="cta-icon cta-icon-phone" src="./img/Logo/phone.png" alt="" width="33" height="33"><span>00-0000-0000</span><span aria-hidden="true" class="chevron">›</span></a>
+        <a class="cta cta-book" href="./contact.html" aria-label="お問い合わせ・Web予約のご案内へ" title="お問い合わせ・Web予約のご案内ページを開きます。予約・送信機能は未実装です。"><img class="cta-icon" src="./img/Logo/icon1.png" alt="" width="33" height="33"><span>お問い合わせ</span><span aria-hidden="true" class="chevron">›</span></a>
+        <a class="cta cta-access" href="./hours-access.html#access"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.3 7-13a7 7 0 0 0-14 0c0 6.7 7 13 7 13Z"/><circle cx="12" cy="9" r="2.5"/></svg><span>アクセス</span><span aria-hidden="true" class="chevron">›</span></a>
+      </nav>
+  <div class="page-scroll-controls" role="group" aria-label="ページ内の移動" data-site-ui hidden>
+    <button type="button" data-scroll-direction="top" aria-label="ページの先頭へ移動"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 12 6-6 6 6M12 6v14"/></svg></button>
+    <button type="button" data-scroll-direction="bottom" aria-label="ページの末尾へ移動"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 12 6 6 6-6M12 18V4"/></svg></button>
+  </div>
+  <p class="visually-hidden" id="text-size-status" role="status" aria-live="polite"></p>
 </body></html>
