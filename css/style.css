@@ -1132,3 +1132,8 @@ html:not([data-reader-size="standard"])[data-reader-size] .faq-item>summary::aft
  .policy-accordion .policy-table tbody th{font-size:16px}
  .policy-accordion .policy-table tbody td:first-child{width:32px;min-height:28px;display:grid;place-items:center;border-radius:6px;background:var(--pale);color:#087c42;font-weight:700;line-height:1.5}
 }
+/* Mobile greeting: a slightly tighter, natural reading rhythm. */
+@media(max-width:700px){
+ .greeting .greeting-copy{font-size:14px;line-height:1.6;letter-spacing:normal}
+ .greeting .greeting-copy>p:not(.greeting-sign){text-align:left;text-justify:auto;text-wrap:wrap;margin-bottom:10px}
+}
